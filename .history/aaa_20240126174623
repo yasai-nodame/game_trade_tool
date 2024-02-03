@@ -1,0 +1,6 @@
+<a class="btn btn-danger jsProductClose loader-on-submit" href="/mypage/products/delete/5051511">
+    <span class="no-loader">
+        <i class="fas fa-times">…</i>
+    </span>
+    <img class="loader preloader" src="/img/preloader.svg?1605143100">
+</a>

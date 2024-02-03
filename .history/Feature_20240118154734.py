@@ -1,0 +1,38 @@
+#自動ログイン、自動出品機能、出品削除機、あらかじめ用意されている画像や文章で出品
+
+from selenium import webdriver 
+from time import sleep 
+from selenium.webdriver.common.by import By
+
+#ゲームトレードのログインID,PW
+login_id = 'yasaikouza@gmail.com'
+login_pw = 'danngomaru02'
+
+#ゲームトレードのサイトURL
+url = 'https://gameclub.jp/gametrade'
+
+driver = webdriver.Chrome()
+web_url = driver.get(url)
+
+driver.implicitly_wait(5)
+#ヘッダーにある新着情報、会員登録、ログインのクラスを取得
+login_class_get = driver.find_element(By.CLASS_NAME,'header-top-btns')
+driver.implicitly_wait(5)
+
+#ログインのhrefを取得する
+login_tag_get = login_class_get.find_elements(By.TAG_NAME,'a')
+driver.implicitly_wait(5)
+#ログインをクリックする
+login_tag_get[2].click()
+
+# for elem in c:
+#     get_href = elem.get_attribute('href')
+#     print(get_href)
+
+# b = driver.find_element(By.TAG_NAME,'div')
+# driver.implicitly_wait(10)
+# c = b.find_element(By.CLASS_NAME,'header-top-btns')
+# driver.implicitly_wait(10)
+# d = c.find_element(By.TAG_NAME,'a')
+# driver.implicitly_wait(10)
+# e = d.find_element(By.CLASS_NAME,'btn btn-info')
